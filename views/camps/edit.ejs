@@ -1,0 +1,50 @@
+<% layout("layouts/boilerplate") %>
+
+
+    
+<div class="col-md-6 offset-md-3">
+    <form action="/camps/<%=camp.id%>?_method=put" method="post" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="title" class="form-label">
+                Title:
+            </label>
+            <input type="text" id="title" name="title" class="form-control" value="<%=camp.title%>" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">
+                Location:
+            </label>
+            <input type="text" id="locations" name="location" class="form-control" value="<%=camp.location%>" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">
+                Description:
+            </label>
+            <textarea id="description" name="description" class="form-control" required><%=camp.description%></textarea>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price:</label>
+            <div class="input-group" >
+                <span class="input-group-text" id="basic-addon1">$</span>
+                <input type="text" class="form-control" value="<%=camp.price%>" aria-label="price" aria-describedby="basic-addon1" required>
+                
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <button class="btn btn-info">Edit</button>
+    </form>
+   
+</div>
+
+</div>

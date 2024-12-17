@@ -1,0 +1,31 @@
+<% layout("layouts/boilerplate") %>
+
+<div id="map" class="mb-4" ></div>
+
+  
+    <ul>
+        <% for (camp of camps){ %>
+          
+             <div class="card">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <img class="img-fluid"src="<%=camp.image%>" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="card-title"><%= camp.title %></h5>
+                        <p class="card-text"><%= camp.description %></p>
+                        <p class="text-muted"><%= camp.location %></p>
+                        <a href="/camps/<%=camp._id%>" class="btn btn-primary"><%= camp.title %></a>
+                    </div>
+                </div>
+             </div>
+        <% } %>
+    </ul>
+
+    <script>
+       const mapKey ='<%-process.env.MAPTILER_API_KEY %>'
+      const camps = {features:<%- JSON.stringify(camps) %>}
+    
+    </script>
+    
+<script src="/javascripts/clusterMap.js" ></script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camp</title>
+    <!-- <link rel="icon" type="image/svg+xml" href="campLogo.png" /> -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script  crossorigin="anonymous" src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.min.js"></script>
+    <link crossorigin="anonymous" href="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.css" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://cdn.maptiler.com/maptiler-sdk-js/v2.3.0/maptiler-sdk.umd.min.js"></script>
+    <link crossorigin="anonymous" href="https://cdn.maptiler.com/maptiler-sdk-js/v2.3.0/maptiler-sdk.css" rel="stylesheet" />
+    <style>
+        #map { 
+          width: 100%;
+          height:500px;
+    } 
+
+        a{
+            color: rgb(0, 0, 0);
+        }
+
+        .img-fluid{
+          height:400px;
+          width:400px;
+
+        }
+       
+        .responsive-image {
+            max-width: 100%; /* Ensures the image is responsive */
+            height: auto;    /* Maintains aspect ratio */
+            width: 100%;
+            justify-content: center;
+            align-items: center;    /* Sets a specific width */
+        }
+        .transparent-button{
+          background-color: transparent;
+          border: none;
+          color: inherit;
+          margin-left: auto;
+        }
+        .alert{
+          display: flex;
+          justify-content: center;
+          
+        }
+   
+        
+    </style>
+</head>
+<body class="d-flex flex-column vh-100">
+    <%- include('../partials/navbar')  %>
+    
+      <% if(success && success.length){%>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <%=success  %> 
+          <button type="button" class="close transparent-button" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% } %>
+
+      <% if(error && error.length){%>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <%=error  %> 
+          <button type="button" class="close transparent-button" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% } %>
+     
+     
+   
+    
+    <main class="container mt-5 ">
+       
+        <%- body %>
+    </main>
+    <%- include('../partials/footer')  %>
+    
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src="/validate.js">
+  
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+</script>
+</body>
+</html>
