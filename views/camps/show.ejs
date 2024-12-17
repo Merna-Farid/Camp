@@ -15,9 +15,16 @@
               <p class="card-text text-muted">submitted by <%=camp.authors[0].username%></p>
               <p class="card-text">$<%=camp.price%>/night</p>
              <% if(currentUser &&currentUser.equals(camp.authors[0])){ %>
-              <a href="/camps/<%=camp._id %>/edit" class="btn btn-info">Edit</a>
-              <form action="/camps/<%=camp.id%>?_method=delete" method="post" class="d-inline">
-                <button class="btn btn-danger">Delete</button>
+                  <!-- <div id="buttons">
+                    <a href="/camps/<%=camp._id %>/edit" class="btn btn-info">Edit</a>
+                    <form action="/camps/<%=camp.id%>?_method=delete" method="post" class="d-inline">
+                      <button class="btn btn-danger">Delete</button>
+                  </div> -->
+                  <div id="buttons">
+                    <a href="/camps/<%=camp._id %>/edit" class="btn btn-info">Edit</a>
+                    <form action="/camps/<%=camp.id%>?_method=delete" method="post" class="d-inline">
+                      <button class="btn btn-danger">Delete</button>
+                  </div>
              <% } %>
             </form>
             </div>

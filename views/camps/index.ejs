@@ -1,20 +1,21 @@
 <% layout("layouts/boilerplate") %>
 
-<div id="map" class="mb-4" ></div>
+<div class="container">
+    <div id="map" class="mb-4" ></div>
 
   
     <ul>
         <% for (camp of camps){ %>
           
-             <div class="card">
+             <div class="card mb-5">
                 <div class="row">
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-4 mb-5" class="image" >
                         <img class="img-fluid"src="<%=camp.image%>" alt="">
                     </div>
                     <div class="col-md-8">
-                        <h5 class="card-title"><%= camp.title %></h5>
+                        <h5 class="card-title "><%= camp.title %></h5>
                         <p class="card-text"><%= camp.description %></p>
-                        <p class="text-muted"><%= camp.location %></p>
+                        <p class="text-muted mb-3"><%= camp.location %></p>
                         <a href="/camps/<%=camp._id%>" class="btn btn-primary"><%= camp.title %></a>
                     </div>
                 </div>
@@ -22,6 +23,7 @@
         <% } %>
     </ul>
 
+</div>
     <script>
        const mapKey ='<%-process.env.MAPTILER_API_KEY %>'
       const camps = {features:<%- JSON.stringify(camps) %>}
