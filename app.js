@@ -272,7 +272,10 @@ app.use((err,req,res,next)=>{
     if(!err.message){err.message="Error"}
     res.status(statusCode).render("./error",{err})
 })
-app.listen(3000,(req,res)=>{
-    console.log("Listening")
-})
-
+// app.listen(3000,(req,res)=>{
+//     console.log("Listening")
+// })
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
