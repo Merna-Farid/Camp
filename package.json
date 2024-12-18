@@ -8,7 +8,7 @@
     "start": "node app.js"
   },
   "engines": {
-    "node": "23.3.0"
+    "node": "22.x"
   },
   "dependencies": {
     "@maptiler/client": "^1.8.1",
